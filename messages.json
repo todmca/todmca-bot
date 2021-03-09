@@ -1,0 +1,5 @@
+{
+	"globallyBanned": "Baneado globalmente",
+	"globalBanCommandFailedMessage": "por favor especifique un usuario",
+	"insufficientPermissions": "no tiene suficiente permiso para ejecutar este comando"
+}
