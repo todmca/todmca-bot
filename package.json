@@ -1,0 +1,19 @@
+{
+  "name": "todmca-bot",
+  "version": "1.0.0",
+  "description": "Bot para los servidores que forman parte del tratado de TODMCA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/todmca/todmca-bot.git"
+  },
+  "author": "incapaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/todmca/todmca-bot/issues"
+  },
+  "homepage": "https://github.com/todmca/todmca-bot#readme"
+}
