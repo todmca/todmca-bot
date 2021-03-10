@@ -6,12 +6,13 @@ const messages = require('./messages.json');
 const client = new Discord.Client();
 
 const commands = {
-	globalban: require('./src/commands/globalban.js')
+	globalban: require('./src/commands/globalban.js'),
+	globalunban: require('./src/commands/globalunban.js')
 }
 
 client.on('message', (message) => {
 	if (message.author.bot) return;
-  
+
 	const content = message.content;
 	const args = content.slice(config.botPrefix.length).trim().split(' ');
 
@@ -25,10 +26,13 @@ client.on('message', (message) => {
 	}
 });
 
-client.on('guildMemberAdd', async (member) => {
-	const data = await dataStore.banDataStore.GetAsync(member.id);
-
-	if (data) member.ban({ reason: messages.globallyBanned });
+client.on('guildMemberAdd', (member) => {
+	let userInfo;
+	dataStore().then(async (data) => {
+		userInfo = await data.banDataStore.GetAsync(member.id);
+	}).then(() => {
+		if (userInfo) member.ban({ reason: messages.globallyBanned });
+	});
 });
 
 client.login(config.botToken);

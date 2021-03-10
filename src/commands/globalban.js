@@ -17,7 +17,9 @@ module.exports = async function(message, args, client) {
 		const info = { reason: args.reduce((current, total) => current + ' ' + total) };
 		target = message.guild.members.cache.get(target.id);
 		target.ban(info);
-		await dataStore['banDataStore'].SetAsync(target.id, info.reason);
+		dataStore().then(async (data) => {
+			await data.banDataStore.SetAsync(target.id, info);
+		});
 	} else {
 		message.channel.send(`<@${member.id}>, ${messages.globalBanCommandFailedMessage}`)
 	}
