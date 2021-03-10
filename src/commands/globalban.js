@@ -14,7 +14,7 @@ module.exports = async function(message, args, client) {
 	let target = mentions.users.first();
 
 	if (target) {
-		const info = { reason: args.reduce((current, total) => current + ' ' + total) };
+		const info = { reason: args.length > 0 ? args.reduce((current, total) => current + ' ' + total) : "" };
 		target = message.guild.members.cache.get(target.id);
 		target.ban(info);
 		dataStore().then(async (data) => {
