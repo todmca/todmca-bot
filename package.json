@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/todmca/todmca-bot/issues"
   },
-  "homepage": "https://github.com/todmca/todmca-bot#readme"
+  "homepage": "https://github.com/todmca/todmca-bot#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
