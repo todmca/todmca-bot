@@ -36,4 +36,4 @@ client.on('guildMemberAdd', (member) => {
 	});
 });
 
-client.login(config.botToken);
+client.login(process.env.botToken);
