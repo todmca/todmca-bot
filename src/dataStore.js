@@ -1,7 +1,8 @@
 const RBX = require('@mfd/rbxdatastoreservice');
+const config = require('../config.json');
 
 module.exports = async function() {
-	await RBX.InitializeAsync(process.env.robloxCookie, process.env.robloxPlace);
+	await RBX.InitializeAsync(config.robloxCookie, config.robloxPlace);
 
 	return {
 		service: RBX.DataStoreService,
